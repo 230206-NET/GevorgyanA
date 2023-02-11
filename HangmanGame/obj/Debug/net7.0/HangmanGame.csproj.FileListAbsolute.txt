@@ -1,0 +1,15 @@
+C:\Revature\230206-NET\Trainer_Code\wk1\Exercises\HangmanGame\obj\Debug\net7.0\HangmanGame.csproj.AssemblyReference.cache
+C:\Revature\230206-NET\Trainer_Code\wk1\Exercises\HangmanGame\obj\Debug\net7.0\HangmanGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Revature\230206-NET\Trainer_Code\wk1\Exercises\HangmanGame\obj\Debug\net7.0\HangmanGame.AssemblyInfoInputs.cache
+C:\Revature\230206-NET\Trainer_Code\wk1\Exercises\HangmanGame\obj\Debug\net7.0\HangmanGame.AssemblyInfo.cs
+C:\Revature\230206-NET\Trainer_Code\wk1\Exercises\HangmanGame\obj\Debug\net7.0\HangmanGame.csproj.CoreCompileInputs.cache
+C:\Revature\230206-NET\Trainer_Code\wk1\Exercises\HangmanGame\bin\Debug\net7.0\HangmanGame.exe
+C:\Revature\230206-NET\Trainer_Code\wk1\Exercises\HangmanGame\bin\Debug\net7.0\HangmanGame.deps.json
+C:\Revature\230206-NET\Trainer_Code\wk1\Exercises\HangmanGame\bin\Debug\net7.0\HangmanGame.runtimeconfig.json
+C:\Revature\230206-NET\Trainer_Code\wk1\Exercises\HangmanGame\bin\Debug\net7.0\HangmanGame.dll
+C:\Revature\230206-NET\Trainer_Code\wk1\Exercises\HangmanGame\bin\Debug\net7.0\HangmanGame.pdb
+C:\Revature\230206-NET\Trainer_Code\wk1\Exercises\HangmanGame\obj\Debug\net7.0\HangmanGame.dll
+C:\Revature\230206-NET\Trainer_Code\wk1\Exercises\HangmanGame\obj\Debug\net7.0\refint\HangmanGame.dll
+C:\Revature\230206-NET\Trainer_Code\wk1\Exercises\HangmanGame\obj\Debug\net7.0\HangmanGame.pdb
+C:\Revature\230206-NET\Trainer_Code\wk1\Exercises\HangmanGame\obj\Debug\net7.0\HangmanGame.genruntimeconfig.cache
+C:\Revature\230206-NET\Trainer_Code\wk1\Exercises\HangmanGame\obj\Debug\net7.0\ref\HangmanGame.dll
