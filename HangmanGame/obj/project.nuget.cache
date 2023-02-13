@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FfWhOGh1t/5ZJ1k3IKzxj+OsBlVbmhYUpYvzCcP3TazyM5RQOTWK04ap6clPRK3TbnCMJbUrtmWAAuoCDJ8vFA==",
+  "dgSpecHash": "bI/0gjYdYPo67uGT+3w9DjYY5Bs57QXEzCmBpRW8qFMAxNClgQguV5iftaCTRELdG3A/Dk3TOHkMnNFfYgYK4A==",
   "success": true,
-  "projectFilePath": "C:\\Revature\\230206-NET\\Trainer_Code\\wk1\\Exercises\\HangmanGame\\HangmanGame.csproj",
+  "projectFilePath": "C:\\Revature\\230206-NET\\GevorgyanA\\HangmanGame\\HangmanGame.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

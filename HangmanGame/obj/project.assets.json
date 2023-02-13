@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Revature\\230206-NET\\Trainer_Code\\wk1\\Exercises\\HangmanGame\\HangmanGame.csproj",
+      "projectUniqueName": "C:\\Revature\\230206-NET\\GevorgyanA\\HangmanGame\\HangmanGame.csproj",
       "projectName": "HangmanGame",
-      "projectPath": "C:\\Revature\\230206-NET\\Trainer_Code\\wk1\\Exercises\\HangmanGame\\HangmanGame.csproj",
+      "projectPath": "C:\\Revature\\230206-NET\\GevorgyanA\\HangmanGame\\HangmanGame.csproj",
       "packagesPath": "C:\\Users\\17473\\.nuget\\packages\\",
-      "outputPath": "C:\\Revature\\230206-NET\\Trainer_Code\\wk1\\Exercises\\HangmanGame\\obj\\",
+      "outputPath": "C:\\Revature\\230206-NET\\GevorgyanA\\HangmanGame\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\17473\\AppData\\Roaming\\NuGet\\NuGet.Config"

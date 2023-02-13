@@ -19,10 +19,11 @@ int attempts=5;
 int wrongAttempts=0;
 
 while(true){
+    
     if(string.Compare(copy,currentGuess)==0) {
         Console.WriteLine("you got it, congrats!");
         break;
-    }
+    }   
 
     if (wrongAttempts==5){
         Console.WriteLine("**** HAMGMAN **** You lost!");
