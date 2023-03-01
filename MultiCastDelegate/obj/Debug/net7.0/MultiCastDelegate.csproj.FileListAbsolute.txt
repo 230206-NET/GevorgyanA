@@ -1,0 +1,15 @@
+C:\Revature\230206-NET\GevorgyanA\MultiCastDelegate\bin\Debug\net7.0\MultiCastDelegate.exe
+C:\Revature\230206-NET\GevorgyanA\MultiCastDelegate\bin\Debug\net7.0\MultiCastDelegate.deps.json
+C:\Revature\230206-NET\GevorgyanA\MultiCastDelegate\bin\Debug\net7.0\MultiCastDelegate.runtimeconfig.json
+C:\Revature\230206-NET\GevorgyanA\MultiCastDelegate\bin\Debug\net7.0\MultiCastDelegate.dll
+C:\Revature\230206-NET\GevorgyanA\MultiCastDelegate\bin\Debug\net7.0\MultiCastDelegate.pdb
+C:\Revature\230206-NET\GevorgyanA\MultiCastDelegate\obj\Debug\net7.0\MultiCastDelegate.csproj.AssemblyReference.cache
+C:\Revature\230206-NET\GevorgyanA\MultiCastDelegate\obj\Debug\net7.0\MultiCastDelegate.GeneratedMSBuildEditorConfig.editorconfig
+C:\Revature\230206-NET\GevorgyanA\MultiCastDelegate\obj\Debug\net7.0\MultiCastDelegate.AssemblyInfoInputs.cache
+C:\Revature\230206-NET\GevorgyanA\MultiCastDelegate\obj\Debug\net7.0\MultiCastDelegate.AssemblyInfo.cs
+C:\Revature\230206-NET\GevorgyanA\MultiCastDelegate\obj\Debug\net7.0\MultiCastDelegate.csproj.CoreCompileInputs.cache
+C:\Revature\230206-NET\GevorgyanA\MultiCastDelegate\obj\Debug\net7.0\MultiCastDelegate.dll
+C:\Revature\230206-NET\GevorgyanA\MultiCastDelegate\obj\Debug\net7.0\refint\MultiCastDelegate.dll
+C:\Revature\230206-NET\GevorgyanA\MultiCastDelegate\obj\Debug\net7.0\MultiCastDelegate.pdb
+C:\Revature\230206-NET\GevorgyanA\MultiCastDelegate\obj\Debug\net7.0\MultiCastDelegate.genruntimeconfig.cache
+C:\Revature\230206-NET\GevorgyanA\MultiCastDelegate\obj\Debug\net7.0\ref\MultiCastDelegate.dll

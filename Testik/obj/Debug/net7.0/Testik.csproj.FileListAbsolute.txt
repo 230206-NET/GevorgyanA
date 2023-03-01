@@ -1,0 +1,15 @@
+C:\Revature\230206-NET\GevorgyanA\Testik\bin\Debug\net7.0\Testik.exe
+C:\Revature\230206-NET\GevorgyanA\Testik\bin\Debug\net7.0\Testik.deps.json
+C:\Revature\230206-NET\GevorgyanA\Testik\bin\Debug\net7.0\Testik.runtimeconfig.json
+C:\Revature\230206-NET\GevorgyanA\Testik\bin\Debug\net7.0\Testik.dll
+C:\Revature\230206-NET\GevorgyanA\Testik\bin\Debug\net7.0\Testik.pdb
+C:\Revature\230206-NET\GevorgyanA\Testik\obj\Debug\net7.0\Testik.csproj.AssemblyReference.cache
+C:\Revature\230206-NET\GevorgyanA\Testik\obj\Debug\net7.0\Testik.GeneratedMSBuildEditorConfig.editorconfig
+C:\Revature\230206-NET\GevorgyanA\Testik\obj\Debug\net7.0\Testik.AssemblyInfoInputs.cache
+C:\Revature\230206-NET\GevorgyanA\Testik\obj\Debug\net7.0\Testik.AssemblyInfo.cs
+C:\Revature\230206-NET\GevorgyanA\Testik\obj\Debug\net7.0\Testik.csproj.CoreCompileInputs.cache
+C:\Revature\230206-NET\GevorgyanA\Testik\obj\Debug\net7.0\Testik.dll
+C:\Revature\230206-NET\GevorgyanA\Testik\obj\Debug\net7.0\refint\Testik.dll
+C:\Revature\230206-NET\GevorgyanA\Testik\obj\Debug\net7.0\Testik.pdb
+C:\Revature\230206-NET\GevorgyanA\Testik\obj\Debug\net7.0\Testik.genruntimeconfig.cache
+C:\Revature\230206-NET\GevorgyanA\Testik\obj\Debug\net7.0\ref\Testik.dll

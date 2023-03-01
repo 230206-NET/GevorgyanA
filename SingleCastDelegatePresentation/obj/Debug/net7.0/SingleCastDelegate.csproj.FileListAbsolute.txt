@@ -1,0 +1,15 @@
+C:\Revature\230206-NET\GevorgyanA\SingleCastDelegatePresentation\bin\Debug\net7.0\SingleCastDelegate.exe
+C:\Revature\230206-NET\GevorgyanA\SingleCastDelegatePresentation\bin\Debug\net7.0\SingleCastDelegate.deps.json
+C:\Revature\230206-NET\GevorgyanA\SingleCastDelegatePresentation\bin\Debug\net7.0\SingleCastDelegate.runtimeconfig.json
+C:\Revature\230206-NET\GevorgyanA\SingleCastDelegatePresentation\bin\Debug\net7.0\SingleCastDelegate.dll
+C:\Revature\230206-NET\GevorgyanA\SingleCastDelegatePresentation\bin\Debug\net7.0\SingleCastDelegate.pdb
+C:\Revature\230206-NET\GevorgyanA\SingleCastDelegatePresentation\obj\Debug\net7.0\SingleCastDelegate.csproj.AssemblyReference.cache
+C:\Revature\230206-NET\GevorgyanA\SingleCastDelegatePresentation\obj\Debug\net7.0\SingleCastDelegate.GeneratedMSBuildEditorConfig.editorconfig
+C:\Revature\230206-NET\GevorgyanA\SingleCastDelegatePresentation\obj\Debug\net7.0\SingleCastDelegate.AssemblyInfoInputs.cache
+C:\Revature\230206-NET\GevorgyanA\SingleCastDelegatePresentation\obj\Debug\net7.0\SingleCastDelegate.AssemblyInfo.cs
+C:\Revature\230206-NET\GevorgyanA\SingleCastDelegatePresentation\obj\Debug\net7.0\SingleCastDelegate.csproj.CoreCompileInputs.cache
+C:\Revature\230206-NET\GevorgyanA\SingleCastDelegatePresentation\obj\Debug\net7.0\SingleCastDelegate.dll
+C:\Revature\230206-NET\GevorgyanA\SingleCastDelegatePresentation\obj\Debug\net7.0\refint\SingleCastDelegate.dll
+C:\Revature\230206-NET\GevorgyanA\SingleCastDelegatePresentation\obj\Debug\net7.0\SingleCastDelegate.pdb
+C:\Revature\230206-NET\GevorgyanA\SingleCastDelegatePresentation\obj\Debug\net7.0\SingleCastDelegate.genruntimeconfig.cache
+C:\Revature\230206-NET\GevorgyanA\SingleCastDelegatePresentation\obj\Debug\net7.0\ref\SingleCastDelegate.dll

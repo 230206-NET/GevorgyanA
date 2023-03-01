@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "cIIwEfory2SasxKA0MYjfHdlgsA0BBBHhPLLpmhwkjIUVBzMwjB4gf5zd3WgaJLM7XmOGeb8wrFNcT0Z+nPRLg==",
+  "success": true,
+  "projectFilePath": "C:\\Revature\\230206-NET\\GevorgyanA\\WorkoutTracker\\Models\\Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\17473\\.nuget\\packages\\serilog\\2.12.0\\serilog.2.12.0.nupkg.sha512"
+  ],
+  "logs": []
+}

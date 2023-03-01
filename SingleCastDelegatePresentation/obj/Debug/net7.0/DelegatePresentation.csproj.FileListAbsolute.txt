@@ -1,0 +1,15 @@
+C:\Revature\230206-NET\GevorgyanA\DelegatePresentation\bin\Debug\net7.0\DelegatePresentation.exe
+C:\Revature\230206-NET\GevorgyanA\DelegatePresentation\bin\Debug\net7.0\DelegatePresentation.deps.json
+C:\Revature\230206-NET\GevorgyanA\DelegatePresentation\bin\Debug\net7.0\DelegatePresentation.runtimeconfig.json
+C:\Revature\230206-NET\GevorgyanA\DelegatePresentation\bin\Debug\net7.0\DelegatePresentation.dll
+C:\Revature\230206-NET\GevorgyanA\DelegatePresentation\bin\Debug\net7.0\DelegatePresentation.pdb
+C:\Revature\230206-NET\GevorgyanA\DelegatePresentation\obj\Debug\net7.0\DelegatePresentation.csproj.AssemblyReference.cache
+C:\Revature\230206-NET\GevorgyanA\DelegatePresentation\obj\Debug\net7.0\DelegatePresentation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Revature\230206-NET\GevorgyanA\DelegatePresentation\obj\Debug\net7.0\DelegatePresentation.AssemblyInfoInputs.cache
+C:\Revature\230206-NET\GevorgyanA\DelegatePresentation\obj\Debug\net7.0\DelegatePresentation.AssemblyInfo.cs
+C:\Revature\230206-NET\GevorgyanA\DelegatePresentation\obj\Debug\net7.0\DelegatePresentation.csproj.CoreCompileInputs.cache
+C:\Revature\230206-NET\GevorgyanA\DelegatePresentation\obj\Debug\net7.0\DelegatePresentation.dll
+C:\Revature\230206-NET\GevorgyanA\DelegatePresentation\obj\Debug\net7.0\refint\DelegatePresentation.dll
+C:\Revature\230206-NET\GevorgyanA\DelegatePresentation\obj\Debug\net7.0\DelegatePresentation.pdb
+C:\Revature\230206-NET\GevorgyanA\DelegatePresentation\obj\Debug\net7.0\DelegatePresentation.genruntimeconfig.cache
+C:\Revature\230206-NET\GevorgyanA\DelegatePresentation\obj\Debug\net7.0\ref\DelegatePresentation.dll
