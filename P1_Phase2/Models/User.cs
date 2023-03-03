@@ -1,4 +1,5 @@
-﻿namespace Models;
+﻿using System.Text;
+namespace Models;
 
 public class User
 {
@@ -55,6 +56,13 @@ public class User
         get {
             return _isManager;
         }
+    }
+
+    public override string ToString()
+    {
+        StringBuilder sb = new();
+        sb.Append($"ID: {this.ID} | Username: {this.Username}");
+        return sb.ToString();
     }
 }
 

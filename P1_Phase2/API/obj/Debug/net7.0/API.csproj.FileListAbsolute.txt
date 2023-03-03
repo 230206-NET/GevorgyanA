@@ -41,3 +41,5 @@ C:\Revature\230206-NET\GevorgyanA\P1_Phase2\API\obj\Debug\net7.0\refint\API.dll
 C:\Revature\230206-NET\GevorgyanA\P1_Phase2\API\obj\Debug\net7.0\API.pdb
 C:\Revature\230206-NET\GevorgyanA\P1_Phase2\API\obj\Debug\net7.0\API.genruntimeconfig.cache
 C:\Revature\230206-NET\GevorgyanA\P1_Phase2\API\obj\Debug\net7.0\ref\API.dll
+C:\Revature\230206-NET\GevorgyanA\P1_Phase2\API\bin\Debug\net7.0\Services.dll
+C:\Revature\230206-NET\GevorgyanA\P1_Phase2\API\bin\Debug\net7.0\Services.pdb

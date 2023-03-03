@@ -11,6 +11,10 @@ public class Ticket
 
     private string _statusText="Pending";
 
+    public Ticket()
+    {
+    }
+
     public Ticket(int id, string? description, Decimal amount)
     {
         _description=description;
@@ -18,12 +22,19 @@ public class Ticket
         _id=id;
     }
 
-    public Ticket(int id, int userId, string? description, Decimal amount)
+    public Ticket(int id, int userId, string? description, Decimal amount, int status)
     {
         _description=description;
         _amount=amount;
         _id=id;
         _userId=userId;
+        _status=status;
+        if (this._status==0)
+                _statusText="Pending";
+            else if (this._status==1)
+                _statusText="Approved";
+            else if (this._status==2)
+                _statusText="Rejected";
     }
 
     public string? Description {
@@ -49,20 +60,6 @@ public class Ticket
         }
         get {
             return _status;
-        }
-    }
-
-    public string StatusText {
-        set {
-            if (this._status==0)
-                _statusText="Pending";
-            else if (this._status==1)
-                _statusText="Approved";
-            else if (this._status==2)
-                _statusText="Rejected";
-        }
-        get {
-            return _statusText;
         }
     }
 

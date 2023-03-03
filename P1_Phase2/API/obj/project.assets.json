@@ -262,6 +262,20 @@
           "bin/placeholder/DataAccess.dll": {}
         }
       },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DataAccess": "1.0.0",
+          "User": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.dll": {}
+        }
+      },
       "User/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -961,6 +975,11 @@
       "path": "../DataAccess/DataAccess.csproj",
       "msbuildProject": "../DataAccess/DataAccess.csproj"
     },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../Services/Services.csproj",
+      "msbuildProject": "../Services/Services.csproj"
+    },
     "User/1.0.0": {
       "type": "project",
       "path": "../Models/User.csproj",
@@ -970,6 +989,7 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "DataAccess >= 1.0.0",
+      "Services >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0",
       "User >= 1.0.0"
     ]
@@ -1004,6 +1024,9 @@
             },
             "C:\\Revature\\230206-NET\\GevorgyanA\\P1_Phase2\\Models\\User.csproj": {
               "projectPath": "C:\\Revature\\230206-NET\\GevorgyanA\\P1_Phase2\\Models\\User.csproj"
+            },
+            "C:\\Revature\\230206-NET\\GevorgyanA\\P1_Phase2\\Services\\Services.csproj": {
+              "projectPath": "C:\\Revature\\230206-NET\\GevorgyanA\\P1_Phase2\\Services\\Services.csproj"
             }
           }
         }

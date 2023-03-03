@@ -6,61 +6,13 @@ namespace DataAccess;
 
 public class DBRepository : IRepository
 {
-    // public List<Ticket> ViewTickets(User u) {
-    //     return new List<Ticket>();
-    // }
     private readonly string _connectionString;
     public DBRepository(string connectionString) {
         _connectionString = connectionString;
     }
 
-    public List<User> initUserList() {
-        List<User> UserList = new  List<User>();
-
-        using SqlConnection connection = new SqlConnection(Secrets.getConnectionString()); 
-
-        // Click the "Connect" button
-        connection.Open();
-
-        using SqlCommand cmd = new SqlCommand("SELECT * FROM USERS", connection);
-        using SqlDataReader reader = cmd.ExecuteReader();
-        
-        while(reader.Read()) {
-            int wId = (int) reader["ID"];
-            string wName = (string) reader["NAME"];
-            string wPassword = (string) reader["PASSWORD"];
-            int wIsManager = (int) reader["ISMANAGER"];
-            UserList.Add(new User(wName,wPassword,wId,wIsManager));
-        }
-
-        return UserList;
-    }
-
-    public void initTicketList(List<User> uList) {
-        List<Ticket> TicketList = new  List<Ticket>();
-
-        using SqlConnection connection = new SqlConnection(Secrets.getConnectionString()); 
-
-        // Click the "Connect" button
-        connection.Open();
-
-        using SqlCommand cmd = new SqlCommand("SELECT * FROM TICKET", connection);
-        using SqlDataReader reader = cmd.ExecuteReader();
-        
-        while(reader.Read()) {
-            int wId = (int) reader["ID"];
-            int wuserId = (int) reader["UserID"];
-            string wDescription = (string) reader["DESCRIPTION"];
-            decimal wAmount= (decimal) reader["AMOUNT"];
-            foreach (User u in uList) {
-                if (u.ID==wuserId)
-                    u.listOfTickets.Add(new Ticket(wId,wuserId,wDescription,wAmount));
-            }
-        }
-    }
-
-    public void ViewTickets(User u) {
-        //List<Ticket> UserList = new  List<Ticket>();
+    public List<Ticket> ViewTickets(User user) {
+        List<Ticket> ticketList = new  List<Ticket>();
 
         using SqlConnection connection = new SqlConnection(Secrets.getConnectionString()); 
 
@@ -68,7 +20,7 @@ public class DBRepository : IRepository
         connection.Open();
 
         using SqlCommand cmd = new SqlCommand("SELECT * FROM TICKET Where UserID = @id", connection);
-        cmd.Parameters.AddWithValue("@id", u.ID);
+        cmd.Parameters.AddWithValue("@id", user.ID);
         using SqlDataReader reader = cmd.ExecuteReader();
         
         while(reader.Read()) {
@@ -83,11 +35,14 @@ public class DBRepository : IRepository
                 statusText="Approved";
             else if (wStatus==2)
                 statusText="Rejected";
-            Console.WriteLine($"Ticket ID{wId}: Spent {wAmount:C2} for {wDescription.ToLower()}. Status is {statusText.ToLower()}");
+            // Console.WriteLine($"Ticket ID{wId}: Spent {wAmount:C2} for {wDescription.ToLower()}. Status is {statusText.ToLower()}");
+            Ticket t = new Ticket(wId,user.ID,wDescription,wAmount,wStatus);
+            ticketList.Add(t);
         }
+        return ticketList;
     }
 
-    public void UserLogin(string? username, string? password) {
+    public int UserLogin(User user) {
         using SqlConnection connection = new SqlConnection(Secrets.getConnectionString()); 
 
         // Click the "Connect" button
@@ -99,76 +54,56 @@ public class DBRepository : IRepository
         while(reader.Read()) {
             string wName = (string) reader["NAME"];
             string wPassword = (string) reader["PASSWORD"];
-            //int? eId = reader.IsDBNull(3) ? null : (int) reader["eID"];
-            if(wName==username && wPassword==password) {
-                Console.WriteLine("\nYou logged in successfully!",Console.ForegroundColor=ConsoleColor.Green);
-                Console.WriteLine("",Console.ForegroundColor=ConsoleColor.White);
-                return;
+            int wisManager = (int) reader["ISMANAGER"];
+            int wid = (int) reader["ID"];
+            if(wName==user.Username && wPassword==user.Password) {
+                return wisManager;
             }            
         }
-        Console.WriteLine("\nThe combination of Username nad Password is not correct",Console.ForegroundColor=ConsoleColor.Red);
-        Console.WriteLine("",Console.ForegroundColor=ConsoleColor.White);
+        return -1;
     }
 
-    /// <summary>
-    /// Persists a new ticket to storage
-    /// </summary>
-    public Ticket CreateNewTicket(User u, string? description, Decimal amount) {
-        Ticket ticket = new Ticket(u.ID,description,amount);
+    public Ticket CreateNewTicket(User user, Ticket newTicket) {
+        
+        
         using SqlConnection conn = new SqlConnection(Secrets.getConnectionString());
         conn.Open();
 
 
         using SqlCommand cmd = new SqlCommand("INSERT INTO Ticket(Description, Amount, UserID, Status) OUTPUT INSERTED.Id Values (@wDescription, @wAmount, @wUserId, @wStatus)", conn);
-        cmd.Parameters.AddWithValue("@wDescription", description);
-        cmd.Parameters.AddWithValue("@wAmount", amount);
-        cmd.Parameters.AddWithValue("@wUserId", u.ID);       
-        cmd.Parameters.AddWithValue("@wStatus", ticket.Status);
+        cmd.Parameters.AddWithValue("@wDescription", newTicket.Description);
+        cmd.Parameters.AddWithValue("@wAmount", newTicket.Amount);
+        cmd.Parameters.AddWithValue("@wUserId", user.ID);       
+        cmd.Parameters.AddWithValue("@wStatus", newTicket.Status);
         Console.WriteLine($"The ticket is successfully created",  Console.ForegroundColor=ConsoleColor.Green);
         Console.WriteLine("",Console.ForegroundColor=ConsoleColor.White);
         int createdId = (int) cmd.ExecuteScalar();
-        ticket.UserId=createdId;   
+        newTicket.UserId=createdId;   
+        user.listOfTickets.Add(newTicket);
         
-        //u.listOfTickets.Add(ticket);
 
-        return ticket;
+        return newTicket;
     }
 
-    /// <summary>
-    /// Persists a new user to storage
-    /// </summary>
-    public User CreateNewUser(string? name, string? password, int isManager) {
+        public User CreateNewUser(User userToCreate) {
         try 
         {
             using SqlConnection conn = new SqlConnection(Secrets.getConnectionString());
             conn.Open();
 
             using SqlCommand cmd = new SqlCommand("INSERT INTO Users(Name, Password, IsManager) OUTPUT INSERTED.Id Values (@wName, @wPassword, @wIsManager)", conn);
-            cmd.Parameters.AddWithValue("@wName", name);
-            cmd.Parameters.AddWithValue("@wPassword", password);
-            cmd.Parameters.AddWithValue("@wIsManager", isManager);
+            cmd.Parameters.AddWithValue("@wName", userToCreate.Username);
+            cmd.Parameters.AddWithValue("@wPassword", userToCreate.Password);
+            cmd.Parameters.AddWithValue("@wIsManager", userToCreate.IsManager);
 
             int createdId = (int) cmd.ExecuteScalar();
 
-            User user = new User(name,password,createdId,isManager);
-            Console.WriteLine($"User with the name {name} is successfully created",  Console.ForegroundColor=ConsoleColor.Green);
-            Console.WriteLine("",Console.ForegroundColor=ConsoleColor.White);
+            //User user = new User(name,password,createdId,isManager);
+            // Console.WriteLine($"User with the name {@wName} is successfully created",  Console.ForegroundColor=ConsoleColor.Green);
+            // Console.WriteLine("",Console.ForegroundColor=ConsoleColor.White);
             
-            return user;
+            return userToCreate;
 
-            // you might want to do something if rowsAffected == 0;
-            //sessionToCreate.Id = createdId;
-
-            // foreach(Exercise ex in sessionToCreate.WorkoutExercises)
-            // {
-            //     using SqlCommand ecmd = new SqlCommand("INSERT INTO Exercises(ExerciseName, ExerciseNote) OUTPUT INSERTED.Id Values (@eName, @eNote)", conn);
-
-            //     ecmd.Parameters.AddWithValue("@eName", ex.Name);
-            //     ecmd.Parameters.AddWithValue("@eNote", ex.Notes);
-
-            //     int eId = (int) ecmd.ExecuteScalar();
-            //     ex.Id = eId;
-            // }
         }
         catch (SqlException ex) {
             Console.WriteLine($"Username or password format is not valid",  Console.ForegroundColor=ConsoleColor.Red);
@@ -181,7 +116,9 @@ public class DBRepository : IRepository
         }
     }
 
-    public void ShowUsersList() {
+    public List<User> ShowUsersList() {
+        
+        List<User> usersList = new List<User>();
         using SqlConnection connection = new SqlConnection(Secrets.getConnectionString()); 
 
         // Click the "Connect" button
@@ -190,16 +127,19 @@ public class DBRepository : IRepository
         using SqlCommand cmd = new SqlCommand("SELECT * FROM USERS", connection);
         
         using SqlDataReader reader = cmd.ExecuteReader();
-        Console.WriteLine($"\nRegistered Users list",  Console.ForegroundColor=ConsoleColor.Green);
-        Console.WriteLine("",Console.ForegroundColor=ConsoleColor.White);
+       
         while(reader.Read()) {
             int wId = (int) reader["ID"];
             string wName = (string) reader["NAME"];
-            Console.WriteLine($"{wId} - {wName}");
+            //Console.WriteLine($"{wId} - {wName}");
+            string wpassword = (string) reader["PASSWORD"];
+            int wisManager = (int) reader["ISMANAGER"];
+            usersList.Add(new User(wName,wpassword,wId,wisManager));
         }
+        return usersList;
     }   
 
-    public void ApproveTicket(int t_id) {
+    public Ticket ApproveTicket(int t_id) {
         using SqlConnection conn = new SqlConnection(Secrets.getConnectionString());
         conn.Open();
         
@@ -207,20 +147,51 @@ public class DBRepository : IRepository
         cmd.ExecuteReader();
         // cmd.Parameters.AddWithValue("@wt_id", t_id);
         // Console.WriteLine("@wt_id");
-        Console.WriteLine($"Ticket {t_id} is successfully updated",  Console.ForegroundColor=ConsoleColor.Green);
+        Console.WriteLine($"Ticket {t_id} is approved",  Console.ForegroundColor=ConsoleColor.Green);
         Console.WriteLine("",Console.ForegroundColor=ConsoleColor.White);
+        conn.Close();
+        conn.Open();
+        using SqlCommand cmd1 = new SqlCommand($"SELECT * FROM TICKET WHERE ID={t_id}", conn);
+        using SqlDataReader reader = cmd1.ExecuteReader();
+        
+        Ticket t = new Ticket();
+        while(reader.Read()) {
+            int wId = (int) reader["ID"];
+            int wuserId = (int) reader["UserID"];
+            string wDescription = (string) reader["DESCRIPTION"];
+            decimal wAmount= (decimal) reader["AMOUNT"];
+            int wstatus = (int) reader["STATUS"];
+            t = new Ticket(wId,wuserId,wDescription,wAmount,wstatus);
+        }
+        return t;
     }
+    
 
-    public void RejectTicket(int t_id) {
+    public Ticket RejectTicket(int t_id) {
         using SqlConnection conn = new SqlConnection(Secrets.getConnectionString());
         conn.Open();
         
         using SqlCommand cmd = new SqlCommand($"UPDATE Ticket SET STATUS=2 where ID={t_id}", conn);
-        cmd.ExecuteReader();
+         cmd.ExecuteReader();
         // cmd.Parameters.AddWithValue("@wt_id", t_id);
         // Console.WriteLine("@wt_id");
-        Console.WriteLine($"Ticket {t_id} is successfully updated",  Console.ForegroundColor=ConsoleColor.Green);
+        Console.WriteLine($"Ticket {t_id} is rejected",  Console.ForegroundColor=ConsoleColor.Green);
         Console.WriteLine("",Console.ForegroundColor=ConsoleColor.White);
+        conn.Close();
+        conn.Open();
+        using SqlCommand cmd1 = new SqlCommand($"SELECT * FROM TICKET WHERE ID={t_id}", conn);
+        using SqlDataReader reader = cmd1.ExecuteReader();
+        
+        Ticket t = new Ticket();
+        while(reader.Read()) {
+            int wId = (int) reader["ID"];
+            int wuserId = (int) reader["UserID"];
+            string wDescription = (string) reader["DESCRIPTION"];
+            decimal wAmount= (decimal) reader["AMOUNT"];
+            int wstatus = (int) reader["STATUS"];
+            t = new Ticket(wId,wuserId,wDescription,wAmount,wstatus);
+        }
+        return t;
     }
 
     public void ViewAllTickets(User u) {

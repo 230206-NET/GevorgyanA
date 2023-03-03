@@ -9,6 +9,7 @@
       "API/1.0.0": {
         "dependencies": {
           "DataAccess": "1.0.0",
+          "Services": "1.0.0",
           "Swashbuckle.AspNetCore": "6.5.0",
           "User": "1.0.0"
         },
@@ -156,6 +157,15 @@
           "DataAccess.dll": {}
         }
       },
+      "Services/1.0.0": {
+        "dependencies": {
+          "DataAccess": "1.0.0",
+          "User": "1.0.0"
+        },
+        "runtime": {
+          "Services.dll": {}
+        }
+      },
       "User/1.0.0": {
         "runtime": {
           "User.dll": {}
@@ -282,6 +292,11 @@
       "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
     },
     "DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
