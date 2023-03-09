@@ -1,3 +1,4 @@
+using System.Text;
 namespace Models;
 
 public class Ticket
@@ -79,5 +80,12 @@ public class Ticket
         get {
             return _userId;
         }
+    }
+
+    public override string ToString()
+    {
+        StringBuilder sb = new();
+        sb.Append($"ID: {this.ID} | Spent {this.Amount:C2} for {this.Description.ToLower()} | Status is {this._statusText.ToLower()}");
+        return sb.ToString();
     }
 }

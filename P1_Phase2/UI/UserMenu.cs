@@ -1,14 +1,23 @@
 ﻿using Models;
+using System.Net.Http;
+using System.Net.Http.Json;
+using System.Text.Json;
 
 namespace UI;
 
 public class UserMenu
 {
+    // public UserMenu() {
+    // }
+
+    private HttpClient _http;
     public UserMenu() {
+       _http = new HttpClient();
+       _http.BaseAddress = new Uri("http://localhost:5054/");
     }
     // List<Ticket> TicketList = new List<Ticket>();
 
-    public void Start(User u)
+    public async Task Start(User u)
     {
         
         Console.WriteLine("-----------------------------------------------------------------");
@@ -35,6 +44,12 @@ public class UserMenu
                 break;
                 case "2":
                 // ViewTickets(u);
+                string content = await _http.GetStringAsync($"user/tickets?username={u.Username}");
+                Console.WriteLine(content);
+
+                List<Ticket> tickets = JsonSerializer.Deserialize<List<Ticket>>(content);
+                foreach (Ticket t in tickets)
+                    Console.WriteLine(t);
                 break;
                 default:
                 Console.WriteLine("Invalid entry");

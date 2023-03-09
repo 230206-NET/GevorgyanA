@@ -46,7 +46,7 @@ public class MainMenu
                 Console.WriteLine("-----------------------------------------------------------------");
                 Console.WriteLine("Welcome to the Employee portal login");
                 Console.WriteLine("-----------------------------------------------------------------\n");
-                UserLogin();
+                await UserLogin();
                 Thread.Sleep(3000);
                 break;
                 case "2":
@@ -104,12 +104,12 @@ public class MainMenu
         HttpResponseMessage msg = await _http.PostAsync("login", jsonContent);
         //await Task.Delay(2000);
         if ((await msg.Content.ReadAsStringAsync())=="0"){
-                Console.WriteLine("Logged in successfully!\n");
+                Console.WriteLine("\nLogged in successfully!\n");
                 UserMenu userMenu = new UserMenu();
                 userMenu.Start(user);
             }
             else if ((await msg.Content.ReadAsStringAsync())=="1"){
-                Console.WriteLine("Logged in successfully as a Manager!\n");
+                Console.WriteLine("\nLogged in successfully as a Manager!\n");
                 ManagerMenu managerMenu = new ManagerMenu();
                 managerMenu.Start(user);
             }
